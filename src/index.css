@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Ubuntu", sans-serif;
+  }
+
+  .text-stroke-1 {
+    -webkit-text-stroke: 1px #000;
+  }
+
+  .text-stroke-2 {
+    -webkit-text-stroke: 1px #431567;
+  }
+}
