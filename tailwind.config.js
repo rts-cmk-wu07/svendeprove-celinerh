@@ -36,6 +36,9 @@ module.exports = {
         // logo
         logoText: "#E856EB",
         logoBackground: "#913693",
+
+        // navigation
+        navigationBackground: "#E9E9E9",
       },
       backgroundImage: {
         splash: "url('../public/images/splash-image.jpg')",
