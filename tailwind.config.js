@@ -40,6 +40,10 @@ module.exports = {
       backgroundImage: {
         splash: "url('../public/images/splash-image.jpg')",
       },
+      boxShadow: {
+        button: "3px 4px 4px rgba(0, 0, 0, 0.25)",
+        logoLine: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+      },
     },
   },
   plugins: [],
