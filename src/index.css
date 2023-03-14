@@ -10,7 +10,7 @@
   }
 
   .page {
-    @apply bg-primaryBackground p-6;
+    @apply bg-primaryBackground p-6 h-screen;
   }
 
   .button {
