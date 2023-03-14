@@ -1,5 +1,11 @@
+import Heading from "../components/Heading";
+
 function ClassSignups() {
-  return <div>ClassSignups</div>;
+  return (
+    <div className="page">
+      <Heading title="HOLD NAVN HER" />
+    </div>
+  );
 }
 
 export default ClassSignups;
