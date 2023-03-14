@@ -15,19 +15,30 @@ module.exports = {
         logo: "72px",
       },
       colors: {
+        // heading
         heading: "#EAEAEA",
+
+        // background
         primaryBackground: "#5E2E53",
-        secondaryBackground: "#E1A1E980",
-        tertiaryBackground: "#EAEAEA",
-        quaternaryBackground: "#C4C4C430",
+        cardBackground: "#E1A1E980",
+        loginInputBackground: "#EAEAEA",
+        searchInputBackground: "#C4C4C430",
+
+        // text
         primaryText: "#ffffff",
         secondaryText: "#000000",
-        tertiaryText: "#E9E9E9",
-        quaternaryText: "#999999",
-        primaryLogoText: "#E856EB",
-        primaryLogoStroke: "#431567",
-        secondaryLogoStroke: "#000000",
-        primaryLogoBackground: "#913693",
+        placeholderText: "#999999",
+
+        // button
+        buttonText: "#E9E9E9",
+        buttonBackground: "#5E2E53",
+
+        // logo
+        logoText: "#E856EB",
+        logoBackground: "#913693",
+      },
+      backgroundImage: {
+        splash: "url('../public/images/splash-image.jpg')",
       },
     },
   },
