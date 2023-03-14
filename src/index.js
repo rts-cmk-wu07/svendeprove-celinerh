@@ -15,6 +15,7 @@ import Calendar from "./pages/Calendar";
 import ClassSignups from "./pages/ClassSignups";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+import TokenProvider from "./contexts/TokenProvider";
 
 const router = createBrowserRouter([
   {
@@ -37,6 +38,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <TokenProvider>
+      <RouterProvider router={router} />
+    </TokenProvider>
   </React.StrictMode>
 );
