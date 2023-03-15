@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       { path: "/soeg", element: <Search /> },
       { path: "/kalender", element: <Calendar /> },
       { path: "/kalender/:id", element: <ClassSignups /> },
-      { path: "/logind", element: <Login /> },
+      { path: "/login", element: <Login /> },
       { path: "/404", element: <NotFound /> },
       { path: "*", element: <Navigate to="/404" /> },
     ],
