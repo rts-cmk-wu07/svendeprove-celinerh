@@ -16,6 +16,7 @@ import ClassSignups from "./pages/ClassSignups";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import TokenProvider from "./contexts/TokenProvider";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,7 +27,14 @@ const router = createBrowserRouter([
       { path: "/aktiviteter", element: <Activities /> },
       { path: "/aktiviteter/:id", element: <Activity /> },
       { path: "/soeg", element: <Search /> },
-      { path: "/kalender", element: <Calendar /> },
+      {
+        path: "/kalender",
+        element: (
+          <ProtectedRoute>
+            <Calendar />
+          </ProtectedRoute>
+        ),
+      },
       { path: "/kalender/:id", element: <ClassSignups /> },
       { path: "/login", element: <Login /> },
       { path: "/404", element: <NotFound /> },
