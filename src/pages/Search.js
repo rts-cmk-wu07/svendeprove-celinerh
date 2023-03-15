@@ -25,7 +25,7 @@ function Search() {
   );
 
   return (
-    <div className="page flex flex-col gap-6">
+    <div className="page h-screen flex flex-col gap-6">
       <Heading title="Søg" />
       <div className="flex items-center bg-searchInputBackground p-3">
         <input

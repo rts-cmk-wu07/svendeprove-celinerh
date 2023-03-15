@@ -4,8 +4,8 @@ import { ToastContainer } from "react-toastify";
 
 function Layout() {
   return (
-    <div className="h-screen">
-      <main className="h-screen">
+    <>
+      <main>
         <Outlet />
       </main>
       <ToastContainer
@@ -20,7 +20,7 @@ function Layout() {
         pauseOnHover
         theme="light"
       />
-    </div>
+    </>
   );
 }
 
