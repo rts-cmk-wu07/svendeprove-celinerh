@@ -31,6 +31,7 @@ module.exports = {
         primaryText: "#ffffff",
         secondaryText: "#000000",
         placeholderText: "#999999",
+        searchIcon: "#EAEAEA",
 
         // button
         buttonText: "#E9E9E9",
