@@ -12,7 +12,10 @@ module.exports = {
         medium: ["24px", "28px"],
         large: ["36px", "41px"],
         xlarge: ["48px", "55px"],
-        logo: "72px",
+
+        // logo
+        logoSize1: ["36px", "30px"],
+        logoSize2: ["72px", "50px"],
       },
       colors: {
         // heading
@@ -20,7 +23,7 @@ module.exports = {
 
         // background
         primaryBackground: "#5E2E53",
-        cardBackground: "#E1A1E980",
+        cardBackground: "#E1A1E9",
         loginInputBackground: "#EAEAEA",
         searchInputBackground: "#C4C4C430",
 
@@ -35,7 +38,7 @@ module.exports = {
 
         // logo
         logoText: "#E856EB",
-        logoBackground: "#913693",
+        logoLineBackground: "#913693",
 
         // navigation
         navigationBackground: "#E9E9E9",
