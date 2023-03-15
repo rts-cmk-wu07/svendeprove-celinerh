@@ -12,11 +12,11 @@ import Activities from "./pages/Activities";
 import Activity from "./pages/Activity";
 import Search from "./pages/Search";
 import Calendar from "./pages/Calendar";
-import ClassSignups from "./pages/ClassSignups";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 import TokenProvider from "./contexts/TokenProvider";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ActivitySignups from "./pages/ActivitySignups";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      { path: "/kalender/:id", element: <ClassSignups /> },
+      { path: "/kalender/:id", element: <ActivitySignups /> },
       { path: "/login", element: <Login /> },
       { path: "/404", element: <NotFound /> },
       { path: "*", element: <Navigate to="/404" /> },
