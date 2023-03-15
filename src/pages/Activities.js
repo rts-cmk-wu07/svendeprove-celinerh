@@ -10,7 +10,7 @@ function Activities() {
   const { activities, isLoading, error } = useActivities();
 
   return (
-    <div className="page flex flex-col gap-6">
+    <div className="page h-screen flex flex-col gap-6">
       <Heading title="Aktiviteter" />
       {error && <ErrorMessage />}
       {isLoading && <Spinner />}
