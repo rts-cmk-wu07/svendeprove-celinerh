@@ -25,6 +25,7 @@ module.exports = {
         primaryBackground: "#5E2E53",
         cardBackground: "#E1A1E9",
         loginInputBackground: "#EAEAEA",
+        calendarCardBackground: "#EAEAEA",
         searchInputBackground: "#C4C4C430",
 
         // text
