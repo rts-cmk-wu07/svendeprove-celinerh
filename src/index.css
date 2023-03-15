@@ -14,7 +14,7 @@
   }
 
   .button {
-    @apply bg-buttonBackground text-buttonText max-w-[249px] w-full rounded-[10px] py-4 shadow-button;
+    @apply block text-center bg-buttonBackground text-buttonText max-w-[249px] w-full rounded-[10px] py-4 shadow-button;
   }
 
   .navLink {
@@ -22,10 +22,10 @@
   }
 
   .text-stroke-1 {
-    -webkit-text-stroke: 1px #000;
+    -webkit-text-stroke: 1.5px #431567;
   }
 
   .text-stroke-2 {
-    -webkit-text-stroke: 1px #431567;
+    -webkit-text-stroke: 1px #000;
   }
 }
