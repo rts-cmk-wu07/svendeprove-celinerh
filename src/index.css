@@ -14,7 +14,7 @@
   }
 
   .button {
-    @apply block text-center bg-buttonBackground text-buttonText max-w-[249px] w-full rounded-[10px] py-4 shadow-button;
+    @apply block text-center bg-buttonBackground text-buttonText text-small max-w-[249px] w-full rounded-[10px] py-4 shadow-button;
   }
 
   .navLink {
@@ -28,4 +28,13 @@
   .text-stroke-2 {
     -webkit-text-stroke: 1px #000;
   }
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
