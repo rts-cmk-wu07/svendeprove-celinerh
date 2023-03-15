@@ -7,7 +7,9 @@ const useUser = () => {
   const [error, setError] = useState(null);
   const { token } = useToken();
 
-  useEffect(() => {
+  const mutateUser = () => {
+    if (!token) return;
+
     fetch(`http://localhost:4000/api/v1/users/${token?.userId}`, {
       method: "GET",
       headers: {
@@ -29,9 +31,13 @@ const useUser = () => {
         setIsLoading(false);
         setError(error.message);
       });
+  };
+
+  useEffect(() => {
+    mutateUser();
   }, [token]);
 
-  return { user, isLoading, error };
+  return { user, isLoading, error, mutateUser };
 };
 
 export default useUser;
