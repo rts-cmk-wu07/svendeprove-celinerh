@@ -30,8 +30,12 @@ function Activity() {
 
           <div className="bg-primaryBackground text-primaryText text-small p-6 pb-[66px] flex-1">
             <h1 className="text-medium">{activity?.name}</h1>
+            <p>
+              <span className="capitalize">{activity?.weekday}</span> kl.{" "}
+              {activity?.time}
+            </p>
             <p className="mt-1">
-              {activity?.minAge}-{activity?.maxAge} år
+              Fra {activity?.minAge}-{activity?.maxAge} år
             </p>
             <p className="mt-3">{activity?.description}</p>
           </div>
