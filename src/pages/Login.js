@@ -108,6 +108,11 @@ function Login() {
   };
 
   const onError = (errors, e) => {
+    if (errors.username && errors.password) {
+      toast.error("Brugernavn og adgangskode er påkrævet.");
+      return;
+    }
+
     if (errors.username) {
       toast.error(errors.username.message);
     }
