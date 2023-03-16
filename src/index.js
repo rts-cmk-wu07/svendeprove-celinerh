@@ -35,7 +35,14 @@ const router = createBrowserRouter([
           </ProtectedRoute>
         ),
       },
-      { path: "/kalender/aktiviteter/:id", element: <ActivitySignups /> },
+      {
+        path: "/kalender/aktiviteter/:id",
+        element: (
+          <ProtectedRoute>
+            <ActivitySignups />
+          </ProtectedRoute>
+        ),
+      },
       { path: "/login", element: <Login /> },
       { path: "/404", element: <NotFound /> },
       { path: "*", element: <Navigate to="/404" /> },
