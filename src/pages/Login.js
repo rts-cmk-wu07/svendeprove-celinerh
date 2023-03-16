@@ -13,12 +13,12 @@ const schema = yup
   .object({
     username: yup
       .string()
-      .required("Username is required")
-      .matches(/^[a-z0-9]+$/i, "Valid characters for username: a-z and 0-9"),
+      .required("Brugernavn er påkrævet")
+      .matches(/^[a-z0-9]+$/i, "Gyldige tegn for brugernavn: a-z og 0-9"),
     password: yup
       .string()
-      .required("Password is required")
-      .matches(/^[a-z0-9]+$/i, "Valid characters for password: a-z and 0-9"),
+      .required("Adgangskode er påkrævet")
+      .matches(/^[a-z0-9]+$/i, "Gyldige tegn for adgangskode: a-z og 0-9"),
     rememberMe: yup.boolean(),
   })
   .required();
@@ -49,7 +49,7 @@ function Login() {
     let toastId;
 
     if (Object.keys(errors).length === 0) {
-      toastId = toast.loading("Logging in...");
+      toastId = toast.loading("Logger ind...");
     }
 
     fetch("http://localhost:4000/auth/token", {
@@ -65,10 +65,10 @@ function Login() {
       .then((response) => {
         if (!response.ok) {
           if (response.status === 401) {
-            throw new Error("Invalid username or password");
+            throw new Error("Ugyldigt brugernavn eller adgangskode.");
           }
 
-          throw new Error("Something went wrong. Try again later.");
+          throw new Error("Noget gik galt. Prøv igen senere.");
         }
 
         return response.json();
@@ -88,7 +88,7 @@ function Login() {
         setToken(token);
 
         toast.update(toastId, {
-          render: "Logged in successfully",
+          render: "Du er nu logget ind.",
           type: "success",
           isLoading: false,
           autoClose: 3000,
