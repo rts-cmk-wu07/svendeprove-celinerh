@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import useUser from "./useUser";
 
 const useIsSignedUp = (user, activity) => {
   const [isSignedUp, setIsSignedUp] = useState(false);
