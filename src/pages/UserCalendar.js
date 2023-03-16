@@ -14,7 +14,7 @@ function UserCalendar() {
       <Heading title="Kalender" />
       {error && <ErrorMessage />}
       {isLoading && <Spinner />}
-      {user && (
+      {user && user?.activities.length > 0 && (
         <div className="flex flex-col gap-4 overflow-y-scroll hide-scrollbar pb-20">
           {user?.activities.map((activity) => (
             <CalenderCard
