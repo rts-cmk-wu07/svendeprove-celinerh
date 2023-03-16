@@ -6,7 +6,7 @@ import { FiCalendar } from "react-icons/fi";
 function Navigation() {
   return (
     <nav className="fixed bottom-0 left-0 w-full bg-navigationBackground px-6 py-3 z-50">
-      <ul className="flex justify-between text-medium">
+      <ul className="flex justify-between">
         <li>
           <NavLink className="navLink" to="/aktiviteter">
             <BiHomeAlt />
