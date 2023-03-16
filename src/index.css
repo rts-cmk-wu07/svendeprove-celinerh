@@ -18,7 +18,7 @@
   }
 
   .navLink {
-    @apply block p-2 border border-black rounded-full;
+    @apply block p-2 border border-black rounded-full text-medium;
   }
 
   .text-stroke-1 {
