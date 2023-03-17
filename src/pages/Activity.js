@@ -5,7 +5,9 @@ import Spinner from "../components/Spinner";
 import { useToken } from "../contexts/TokenProvider";
 import handleActivityLeave from "../functions/handleActivityLeave";
 import handleActivitySignUp from "../functions/handleActivitySignUp";
+import inRange from "../utils/inRange";
 import useActivity from "../hooks/useActivity";
+import useHasActivityThisWeekday from "../hooks/useHasActivityThisWeekday";
 import useIsSignedUp from "../hooks/useIsSignedUp";
 import useUser from "../hooks/useUser";
 
@@ -14,6 +16,12 @@ function Activity() {
   const { token } = useToken();
   const { user, mutateUser } = useUser();
   const { isSignedUp } = useIsSignedUp(user, activity);
+  const { hasActivityThisWeekday } = useHasActivityThisWeekday(user, activity);
+  const withinAgeRestriction = inRange(
+    user?.age,
+    activity?.minAge,
+    activity?.maxAge
+  );
 
   return (
     <div className="flex flex-col min-h-screen pb-20 bg-primaryBackground">
@@ -31,15 +39,29 @@ function Activity() {
             {token && !isSignedUp && (
               <button
                 className="button absolute bottom-6 right-6"
-                onClick={() =>
+                onClick={() => {
+                  if (!withinAgeRestriction) {
+                    toast.error(
+                      "Du er ikke indenfor aldersgrænsen til denne aktivitet."
+                    );
+                    return;
+                  }
+
+                  if (hasActivityThisWeekday) {
+                    toast.error(
+                      "Du kan ikke tilmelde dig flere aktiviteter på samme dag."
+                    );
+                    return;
+                  }
+
                   handleActivitySignUp(token.token, token.userId, activity?.id)
                     .then(() => mutateUser())
                     .catch(() =>
                       toast.error(
                         "Kunne ikke tilmelde dig aktiviteten. Prøv igen senere."
                       )
-                    )
-                }
+                    );
+                }}
               >
                 Tilmeld
               </button>
