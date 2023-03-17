@@ -17,6 +17,7 @@ import NotFound from "./pages/NotFound";
 import TokenProvider from "./contexts/TokenProvider";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ActivitySignups from "./pages/ActivitySignups";
+import ProtectedInstructorRoute from "./components/ProtectedInstructorRoute";
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,9 @@ const router = createBrowserRouter([
         path: "/kalender/aktiviteter/:id",
         element: (
           <ProtectedRoute>
-            <ActivitySignups />
+            <ProtectedInstructorRoute>
+              <ActivitySignups />
+            </ProtectedInstructorRoute>
           </ProtectedRoute>
         ),
       },
