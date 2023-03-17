@@ -16,7 +16,7 @@ function Activities() {
     <div className="page h-screen flex flex-col gap-6">
       <Heading title="Aktiviteter" />
       {error && <ErrorMessage />}
-      {isLoading && <Spinner />}
+      {isLoading && <Spinner centered />}
       {activities && (
         <Swiper>
           {activities?.map((activity) => (

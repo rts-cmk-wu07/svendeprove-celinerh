@@ -13,7 +13,7 @@ function UserCalendar() {
     <div className="page h-screen flex flex-col gap-6">
       <Heading title="Kalender" />
       {error && <ErrorMessage />}
-      {isLoading && <Spinner />}
+      {isLoading && <Spinner centered />}
       {user && user?.activities.length > 0 && (
         <div className="flex flex-col gap-4 overflow-y-scroll hide-scrollbar pb-20">
           {user?.activities.map((activity) => (

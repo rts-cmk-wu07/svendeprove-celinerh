@@ -50,7 +50,7 @@ function Search() {
         <BiSearch className="text-medium text-searchIcon" />
       </div>
       {error && <ErrorMessage />}
-      {isLoading && <Spinner />}
+      {isLoading && <Spinner centered />}
       {filteredActivities?.length === 0 && (
         <ErrorMessage message="Der blev ikke fundet nogle aktiviteter. Prøv at søge efter noget andet." />
       )}
