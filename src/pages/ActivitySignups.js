@@ -11,9 +11,9 @@ function ActivitySignups() {
 
   return (
     <div className="page h-screen flex flex-col gap-6">
-      <Heading className="truncate" title={activity?.name} />
+      <Heading className="truncate" title={activity?.name ?? "Loading..."} />
       {error && <ErrorMessage />}
-      {isLoading && <Spinner />}
+      {isLoading && <Spinner centered />}
       {roster && roster.length > 0 && (
         <div className="flex flex-col gap-4 overflow-y-scroll hide-scrollbar pb-20">
           {roster?.map((participant, index) => (

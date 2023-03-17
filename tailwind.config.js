@@ -10,7 +10,7 @@ module.exports = {
       fontSize: {
         small: ["18px", "21px"],
         medium: ["24px", "28px"],
-        large: ["36px", "41px"],
+        large: "36px",
         xlarge: ["48px", "55px"],
 
         // logo
