@@ -8,17 +8,7 @@ export const useToken = () => {
 };
 
 function TokenProvider({ children }) {
-  const [token, setToken] = useState(null);
-
-  useEffect(() => {
-    if (!token) {
-      const tokenCookie = getCookie("token");
-
-      if (tokenCookie) {
-        setToken(JSON.parse(tokenCookie));
-      }
-    }
-  }, [token]);
+  const [token, setToken] = useState(JSON.parse(getCookie("token", null)));
 
   return (
     <TokenContext.Provider value={{ token, setToken }}>
