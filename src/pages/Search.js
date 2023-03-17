@@ -21,7 +21,7 @@ function Search() {
     }
 
     setSearchParams({ q: query });
-  }, [query]);
+  }, [query, setSearchParams]);
 
   const filteredActivities = activities?.filter((activity) =>
     query
