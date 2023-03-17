@@ -22,7 +22,7 @@
   }
 
   .active-navLink {
-    @apply navLink text-primaryBackground border-primaryBackground shadow-sm shadow-primaryBackground scale-110;
+    @apply navLink text-primaryBackground border-primaryBackground shadow-sm shadow-primaryBackground scale-110 outline outline-1;
   }
 
   .text-stroke-1 {
