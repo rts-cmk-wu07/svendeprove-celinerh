@@ -8,17 +8,32 @@ function Navigation() {
     <nav className="fixed bottom-0 left-0 w-full bg-navigationBackground px-6 py-3 z-50">
       <ul className="flex justify-between">
         <li>
-          <NavLink className="navLink" to="/aktiviteter">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-navLink" : "navLink"
+            }
+            to="/aktiviteter"
+          >
             <BiHomeAlt />
           </NavLink>
         </li>
         <li>
-          <NavLink className="navLink" to="/soeg">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-navLink" : "navLink"
+            }
+            to="/soeg"
+          >
             <BiSearch />
           </NavLink>
         </li>
         <li>
-          <NavLink className="navLink" to="/kalender">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? "active-navLink" : "navLink"
+            }
+            to="/kalender"
+          >
             <FiCalendar />
           </NavLink>
         </li>

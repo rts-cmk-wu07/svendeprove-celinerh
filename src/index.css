@@ -21,6 +21,10 @@
     @apply block p-2 border border-black rounded-full text-medium;
   }
 
+  .active-navLink {
+    @apply navLink text-primaryBackground border-primaryBackground shadow-sm shadow-primaryBackground scale-110;
+  }
+
   .text-stroke-1 {
     -webkit-text-stroke: 1.5px #431567;
   }
