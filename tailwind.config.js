@@ -51,6 +51,7 @@ module.exports = {
       boxShadow: {
         button: "3px 4px 4px rgba(0, 0, 0, 0.25)",
         logoLine: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+        navigationTop: "0 -8px 20px -5px rgba(233, 233, 233, 0.2)",
       },
       keyframes: {
         "fade-in": {
