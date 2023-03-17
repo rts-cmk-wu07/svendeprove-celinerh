@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useToken } from "../contexts/TokenProvider";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useCookie from "react-use-cookie";
 import FormInput from "../components/FormInput";
 import { useForm } from "react-hook-form";
@@ -14,11 +14,8 @@ const schema = yup
     username: yup
       .string()
       .required("Brugernavn er påkrævet")
-      .matches(/^[a-z0-9]+$/i, "Gyldige tegn for brugernavn: a-z og 0-9"),
-    password: yup
-      .string()
-      .required("Adgangskode er påkrævet")
-      .matches(/^[a-z0-9]+$/i, "Gyldige tegn for adgangskode: a-z og 0-9"),
+      .matches(/^[a-zæøå0-9]+$/i, "Kun bogstaver og tal er gyldige"),
+    password: yup.string().required("Adgangskode er påkrævet"),
     rememberMe: yup.boolean(),
   })
   .required();
@@ -31,7 +28,7 @@ function Login() {
 
   useEffect(() => {
     if (token) {
-      navigate("/");
+      navigate("/aktiviteter");
     }
   }, [token, navigate]);
 
@@ -93,11 +90,13 @@ function Login() {
           isLoading: false,
           autoClose: 3000,
         });
+
+        navigate("/kalender");
       })
       .catch((error) => {
         setTimeout(() => {
           toast.update(toastId, {
-            render: error.message,
+            render: "Noget gik galt. Prøv igen senere.",
             type: "error",
             isLoading: false,
             autoClose: 3000,
@@ -157,6 +156,12 @@ function Login() {
         >
           Log ind
         </button>
+        <p className="text-white text-center">
+          Fortsæt uden login? Gå til{" "}
+          <Link className="underline" to="/aktiviteter">
+            aktiviteter
+          </Link>
+        </p>
       </form>
     </div>
   );
