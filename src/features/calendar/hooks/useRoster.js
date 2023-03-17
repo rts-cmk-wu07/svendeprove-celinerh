@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useToken } from "../contexts/TokenProvider";
+import { useToken } from "../../../contexts/TokenProvider";
 
 const useRoster = () => {
   const [roster, setRoster] = useState();

@@ -1,9 +1,9 @@
-import CalenderCard from "../components/CalenderCard";
+import CalenderCard from "../features/calendar/components/CalenderCard";
 import ErrorMessage from "../components/ErrorMessage";
 import Heading from "../components/Heading";
 import Navigation from "../components/Navigation";
 import Spinner from "../components/Spinner";
-import useActivities from "../hooks/useActivities";
+import useActivities from "../features/activities/hooks/useActivities";
 import useUser from "../hooks/useUser";
 
 function InstructorCalendar() {

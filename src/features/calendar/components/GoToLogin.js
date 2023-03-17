@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import ErrorMessage from "./ErrorMessage";
-import Heading from "./Heading";
-import Navigation from "./Navigation";
+import ErrorMessage from "../../../components/ErrorMessage";
+import Heading from "../../../components/Heading";
+import Navigation from "../../../components/Navigation";
 
 function GoToLogin() {
   return (

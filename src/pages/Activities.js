@@ -1,4 +1,4 @@
-import ActivityCard from "../components/ActivityCard";
+import ActivityCard from "../features/activities/components/ActivityCard";
 import ErrorMessage from "../components/ErrorMessage";
 import Heading from "../components/Heading";
 import LogOut from "../components/LogOut";
@@ -6,7 +6,7 @@ import Navigation from "../components/Navigation";
 import Spinner from "../components/Spinner";
 import Swiper from "../components/Swiper";
 import { useToken } from "../contexts/TokenProvider";
-import useActivities from "../hooks/useActivities";
+import useActivities from "../features/activities/hooks/useActivities";
 
 function Activities() {
   const { activities, isLoading, error } = useActivities();

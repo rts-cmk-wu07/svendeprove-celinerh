@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { useSearchParams } from "react-router-dom";
-import ActivityCard from "../components/ActivityCard";
+import ActivityCard from "../features/activities/components/ActivityCard";
 import ErrorMessage from "../components/ErrorMessage";
 import Heading from "../components/Heading";
 import Navigation from "../components/Navigation";
 import Spinner from "../components/Spinner";
 import Swiper from "../components/Swiper";
-import useActivities from "../hooks/useActivities";
+import useActivities from "../features/activities/hooks/useActivities";
 
 function Search() {
   const { activities, isLoading, error } = useActivities();

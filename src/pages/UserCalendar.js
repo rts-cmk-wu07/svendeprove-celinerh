@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import CalenderCard from "../components/CalenderCard";
+import CalenderCard from "../features/calendar/components/CalenderCard";
 import ErrorMessage from "../components/ErrorMessage";
 import Heading from "../components/Heading";
 import Navigation from "../components/Navigation";

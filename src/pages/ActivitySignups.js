@@ -2,8 +2,8 @@ import ErrorMessage from "../components/ErrorMessage";
 import Heading from "../components/Heading";
 import Navigation from "../components/Navigation";
 import Spinner from "../components/Spinner";
-import useActivity from "../hooks/useActivity";
-import useRoster from "../hooks/useRoster";
+import useActivity from "../features/activities/hooks/useActivity";
+import useRoster from "../features/calendar/hooks/useRoster";
 
 function ActivitySignups() {
   const { activity } = useActivity();

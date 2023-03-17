@@ -3,12 +3,12 @@ import ErrorMessage from "../components/ErrorMessage";
 import Navigation from "../components/Navigation";
 import Spinner from "../components/Spinner";
 import { useToken } from "../contexts/TokenProvider";
-import handleActivityLeave from "../functions/handleActivityLeave";
-import handleActivitySignUp from "../functions/handleActivitySignUp";
+import handleActivityLeave from "../features/activities/handleActivityLeave";
+import handleActivitySignUp from "../features/activities/handleActivitySignUp";
 import inRange from "../utils/inRange";
-import useActivity from "../hooks/useActivity";
-import useHasActivityThisWeekday from "../hooks/useHasActivityThisWeekday";
-import useIsSignedUp from "../hooks/useIsSignedUp";
+import useActivity from "../features/activities/hooks/useActivity";
+import useHasActivityThisWeekday from "../features/activities/hooks/useHasActivityThisWeekday";
+import useIsSignedUp from "../features/activities/hooks/useIsSignedUp";
 import useUser from "../hooks/useUser";
 
 function Activity() {
