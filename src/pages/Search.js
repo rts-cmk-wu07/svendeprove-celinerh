@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
+import { useSearchParams } from "react-router-dom";
 import ActivityCard from "../components/ActivityCard";
 import ErrorMessage from "../components/ErrorMessage";
 import Heading from "../components/Heading";
@@ -10,7 +11,17 @@ import useActivities from "../hooks/useActivities";
 
 function Search() {
   const { activities, isLoading, error } = useActivities();
-  const [query, setQuery] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [query, setQuery] = useState(searchParams.get("q") || "");
+
+  useEffect(() => {
+    if (!query) {
+      setSearchParams({});
+      return;
+    }
+
+    setSearchParams({ q: query });
+  }, [query]);
 
   const filteredActivities = activities?.filter((activity) =>
     query
