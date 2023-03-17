@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function CalenderCard({ to, title, weekday, time }) {
   return (
     <Link
-      className="block bg-calendarCardBackground p-4 rounded-[11px]"
+      className="block bg-calendarCardBackground p-4 rounded-[11px] shadow-md"
       to={to}
     >
       <h2 className="text-large truncate mb-1">{title}</h2>

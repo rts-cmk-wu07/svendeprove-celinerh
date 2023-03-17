@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function ActivityCard({ id, imageSource, title, minAge, maxAge }) {
   return (
     <Link
-      className="relative rounded-t-[39px] rounded-l-[39px] overflow-hidden h-[344px] flex-shrink-0 snap-start"
+      className="relative rounded-t-[39px] rounded-l-[39px] overflow-hidden h-[344px] flex-shrink-0 snap-start shadow-md"
       to={`/aktiviteter/${id}`}
     >
       <img
