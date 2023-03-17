@@ -1,10 +1,10 @@
-import { Navigate } from "react-router-dom";
 import { useToken } from "../contexts/TokenProvider";
+import GoToLogin from "./GoToLogin";
 
 function ProtectedRoute({ children }) {
   const { token } = useToken();
 
-  return token ? children : <Navigate to="/login" />;
+  return token ? children : <GoToLogin />;
 }
 
 export default ProtectedRoute;
