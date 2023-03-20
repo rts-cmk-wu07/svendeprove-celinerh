@@ -15,7 +15,7 @@ function LogOut() {
 
   return (
     <button
-      className="absolute top-6 right-3 navLink border-buttonText text-primaryText z-30"
+      className="absolute top-8 right-6 navLink border-buttonText text-primaryText z-30"
       onClick={handleLogout}
     >
       <MdLogout />
