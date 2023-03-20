@@ -10,6 +10,7 @@ import useActivity from "../features/activities/hooks/useActivity";
 import useHasActivityThisWeekday from "../features/activities/hooks/useHasActivityThisWeekday";
 import useIsSignedUp from "../features/activities/hooks/useIsSignedUp";
 import useUser from "../hooks/useUser";
+import useIsInstructorThisWeekday from "../features/activities/hooks/useIsInstructorThisWeekday";
 
 function Activity() {
   const { activity, isLoading, error } = useActivity();
@@ -21,6 +22,11 @@ function Activity() {
     user?.age,
     activity?.minAge,
     activity?.maxAge
+  );
+  const { isInstructorThisWeekday } = useIsInstructorThisWeekday(
+    token?.role,
+    user,
+    activity?.weekday
   );
 
   return (
@@ -40,6 +46,18 @@ function Activity() {
               <button
                 className="button absolute bottom-6 right-6"
                 onClick={() => {
+                  if (activity?.instructorId === token.userId) {
+                    toast.error("Du kan ikke tilmelde dig din egen aktivitet.");
+                    return;
+                  }
+
+                  if (isInstructorThisWeekday) {
+                    toast.error(
+                      "Du kan ikke tilmelde dig aktiviteter samme dag som du er instruktør."
+                    );
+                    return;
+                  }
+
                   if (!withinAgeRestriction) {
                     toast.error(
                       "Du er ikke indenfor aldersgrænsen til denne aktivitet."
