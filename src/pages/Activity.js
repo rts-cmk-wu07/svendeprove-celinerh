@@ -13,6 +13,7 @@ import useUser from "../hooks/useUser";
 import useIsInstructorThisWeekday from "../features/activities/hooks/useIsInstructorThisWeekday";
 import { useState } from "react";
 import Modal from "../components/Modal";
+import { apiUrl } from "../utils/apiUrl";
 
 function Activity() {
   const { activity, isLoading, error } = useActivity();
@@ -41,7 +42,7 @@ function Activity() {
           <div className="h-[60vh] relative">
             <img
               className="w-full h-full object-cover"
-              src={activity?.asset.url}
+              src={`${apiUrl}${activity?.asset.url}`}
               alt={activity?.name}
               title={activity?.name}
             />

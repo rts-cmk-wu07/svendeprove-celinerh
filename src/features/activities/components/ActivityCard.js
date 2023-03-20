@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { apiUrl } from "../../../utils/apiUrl";
 
 function ActivityCard({ id, imageSource, title, minAge, maxAge }) {
   return (
@@ -8,7 +9,7 @@ function ActivityCard({ id, imageSource, title, minAge, maxAge }) {
     >
       <img
         className="h-full w-full object-cover"
-        src={imageSource}
+        src={`${apiUrl}${imageSource}`}
         alt={title}
         title={title}
       />
