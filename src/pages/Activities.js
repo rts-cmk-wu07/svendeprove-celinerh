@@ -7,6 +7,7 @@ import Spinner from "../components/Spinner";
 import Swiper from "../components/Swiper";
 import { useToken } from "../contexts/TokenProvider";
 import useActivities from "../features/activities/hooks/useActivities";
+import LogIn from "../components/LogIn";
 
 function Activities() {
   const { activities, isLoading, error } = useActivities();
@@ -32,6 +33,7 @@ function Activities() {
         </Swiper>
       )}
       {token && <LogOut />}
+      {!token && <LogIn />}
       <Navigation />
     </div>
   );

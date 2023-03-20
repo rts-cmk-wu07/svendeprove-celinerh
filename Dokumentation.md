@@ -145,7 +145,7 @@ Jeg har valgt at lave valgfri opgave C - Cookies. Jeg har på login siden (`/log
 - Navigation
   - Aktiv style på ikonet for den aktuelle side.
 - Aktiviteter (`/aktiviteter`)
-  - Muligheden for at logge ud: Da aktiviteter siden ifølge designet har hjem ikon i navigationen, har jeg valgt at tilføje muligheden for at logge ud på denne side, da det er mest intuitivt at kunne logge ud fra “hjem”.
+  - Muligheden for at logge ind/ud: Da aktiviteter siden ifølge designet har hjem ikon i navigationen, har jeg valgt at tilføje muligheden for at logge ind/ud på denne side, da det er mest intuitivt at kunne logge ind/ud fra “hjem”.
 - Aktivitetsdetalje side (`/aktiviteter/:id`)
   - Kravspecifikation nævner at der skal vises ugedag og tidspunkt på aktiviteten, så det er tilføjet (fremgår ikke af designet).
   - For instruktører:
