@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useToken } from "../contexts/TokenProvider";
 
 const useUser = () => {
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { token } = useToken();
