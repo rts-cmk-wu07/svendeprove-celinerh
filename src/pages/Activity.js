@@ -34,7 +34,7 @@ function Activity() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen pb-20 bg-primaryBackground">
+    <div className="flex flex-col h-screen pb-20 bg-primaryBackground">
       {error && <ErrorMessage />}
       {isLoading && <Spinner centered />}
       {activity && (
