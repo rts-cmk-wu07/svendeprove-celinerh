@@ -36,7 +36,7 @@ function Activity() {
   return (
     <div className="flex flex-col min-h-screen pb-20 bg-primaryBackground">
       {error && <ErrorMessage />}
-      {isLoading && <Spinner />}
+      {isLoading && <Spinner centered />}
       {activity && (
         <>
           <div className="h-[60vh] relative">
