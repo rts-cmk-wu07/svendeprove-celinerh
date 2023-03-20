@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { useToken } from "../../../contexts/TokenProvider";
 
 const useRoster = () => {
-  const [roster, setRoster] = useState();
+  const [roster, setRoster] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { token } = useToken();

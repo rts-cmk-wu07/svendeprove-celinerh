@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const useActivities = () => {
-  const [activities, setActivities] = useState();
+  const [activities, setActivities] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -18,7 +18,6 @@ const useActivities = () => {
       .then((data) => {
         setActivities(data);
         setIsLoading(false);
-        setError(null);
       })
       .catch((error) => {
         setIsLoading(false);
