@@ -38,17 +38,19 @@ function Search() {
   return (
     <div className="page h-screen flex flex-col gap-6">
       <Heading title="Søg" />
-      <div className="flex items-center bg-searchInputBackground p-3">
-        <input
-          className="w-full bg-transparent outline-none placeholder:text-placeholderText text-primaryText"
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="Søg efter aktiviteter"
-          autoFocus
-        />
-        <BiSearch className="text-medium text-searchIcon" />
-      </div>
+      {filteredActivities && (
+        <div className="flex items-center bg-searchInputBackground p-3">
+          <input
+            className="w-full bg-transparent outline-none placeholder:text-placeholderText text-primaryText"
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Søg efter aktiviteter"
+            autoFocus
+          />
+          <BiSearch className="text-medium text-searchIcon" />
+        </div>
+      )}
       {error && <ErrorMessage />}
       {isLoading && <Spinner centered />}
       {filteredActivities?.length === 0 && (
