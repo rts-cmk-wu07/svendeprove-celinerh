@@ -8,6 +8,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { apiUrl } from "../utils/apiUrl";
 
 const schema = yup
   .object({
@@ -49,7 +50,7 @@ function Login() {
       toastId = toast.loading("Logger ind...");
     }
 
-    fetch("http://localhost:4000/auth/token", {
+    fetch(`${apiUrl}/auth/token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

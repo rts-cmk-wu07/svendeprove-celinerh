@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useToken } from "../../../contexts/TokenProvider";
+import { apiUrl } from "../../../utils/apiUrl";
 
 const useRoster = () => {
   const [roster, setRoster] = useState(null);
@@ -12,7 +13,7 @@ const useRoster = () => {
   useEffect(() => {
     if (!token) return;
 
-    fetch(`http://localhost:4000/api/v1/users/${token?.userId}/roster/${id}`, {
+    fetch(`${apiUrl}/api/v1/users/${token?.userId}/roster/${id}`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token.token}`,

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { apiUrl } from "../../../utils/apiUrl";
 
 const useActivity = () => {
   const [activity, setActivity] = useState(null);
@@ -8,7 +9,7 @@ const useActivity = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/v1/activities/${id}`, {
+    fetch(`${apiUrl}/api/v1/activities/${id}`, {
       method: "GET",
     })
       .then((response) => {

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { apiUrl } from "../../../utils/apiUrl";
 
 const useActivities = () => {
   const [activities, setActivities] = useState(null);
@@ -6,7 +7,7 @@ const useActivities = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/api/v1/activities`, {
+    fetch(`${apiUrl}/api/v1/activities`, {
       method: "GET",
     })
       .then((response) => {
