@@ -7,6 +7,7 @@ import useActivities from "../features/activities/hooks/useActivities";
 import useUser from "../hooks/useUser";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { AiOutlineCheck } from "react-icons/ai";
 
 function InstructorCalendar() {
   const { user } = useUser();
@@ -22,25 +23,31 @@ function InstructorCalendar() {
       <Heading title="Kalender" />
       {error && <ErrorMessage />}
       {isLoading && <Spinner centered />}
-      <div className="flex border border-primaryText rounded-[10px] overflow-hidden">
+      <div className="flex border border-primaryText rounded-[10px] overflow-hidden flex-shrink-0">
         <button
           className={
             show === "instructor"
-              ? "flex-1 text-small text-center p-4 text-heading border-primaryText"
-              : "flex-1 text-small text-center p-4 bg-primaryText text-primaryBackground"
+              ? "flex-1 text-small text-center p-4 relative bg-primaryText text-primaryBackground transition-all duration-200"
+              : "flex-1 text-small text-center p-4 text-heading border-primaryText bg-primaryBackground transition-all duration-200"
           }
           onClick={() => setShow("instructor")}
         >
+          {show === "instructor" && (
+            <AiOutlineCheck className="absolute top-1/2 -translate-y-1/2" />
+          )}
           Instruktør
         </button>
         <button
           className={
             show === "default"
-              ? "flex-1 text-small text-center p-4 text-heading border-primaryText"
-              : "flex-1 text-small text-center p-4 bg-primaryText text-primaryBackground"
+              ? "flex-1 text-small text-center p-4 relative bg-primaryText text-primaryBackground transition-all duration-200"
+              : "flex-1 text-small text-center p-4 text-heading border-primaryText bg-primaryBackground transition-all duration-200"
           }
           onClick={() => setShow("default")}
         >
+          {show === "default" && (
+            <AiOutlineCheck className="absolute top-1/2 -translate-y-1/2" />
+          )}
           Deltager
         </button>
       </div>
