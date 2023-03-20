@@ -11,6 +11,8 @@ import useHasActivityThisWeekday from "../features/activities/hooks/useHasActivi
 import useIsSignedUp from "../features/activities/hooks/useIsSignedUp";
 import useUser from "../hooks/useUser";
 import useIsInstructorThisWeekday from "../features/activities/hooks/useIsInstructorThisWeekday";
+import { useState } from "react";
+import Modal from "../components/Modal";
 
 function Activity() {
   const { activity, isLoading, error } = useActivity();
@@ -28,6 +30,7 @@ function Activity() {
     user,
     activity?.weekday
   );
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen pb-20 bg-primaryBackground">
@@ -73,7 +76,11 @@ function Activity() {
                   }
 
                   handleActivitySignUp(token.token, token.userId, activity?.id)
-                    .then(() => mutateUser())
+                    .then(() => {
+                      toast.success("Du er nu tilmeldt aktiviteten.");
+
+                      mutateUser();
+                    })
                     .catch(() =>
                       toast.error(
                         "Kunne ikke tilmelde dig aktiviteten. Prøv igen senere."
@@ -87,21 +94,12 @@ function Activity() {
             {token && isSignedUp && (
               <button
                 className="button absolute bottom-6 right-6"
-                onClick={() =>
-                  handleActivityLeave(token.token, token.userId, activity?.id)
-                    .then(() => mutateUser())
-                    .catch(() =>
-                      toast.error(
-                        "Kunne ikke forlade aktiviteten. Prøv igen senere."
-                      )
-                    )
-                }
+                onClick={() => setShowModal(true)}
               >
                 Forlad
               </button>
             )}
           </div>
-
           <div className="text-primaryText text-small p-6 flex-1">
             <h1 className="text-medium">{activity?.name}</h1>
             <p>
@@ -114,6 +112,24 @@ function Activity() {
             <p className="mt-3">{activity?.description}</p>
           </div>
         </>
+      )}
+      {showModal && (
+        <Modal
+          message="Er du sikker på at du vil forlade aktiviteten?"
+          onConfirm={() =>
+            handleActivityLeave(token.token, token.userId, activity?.id)
+              .then(() => {
+                mutateUser();
+
+                toast.success("Du har forladt aktiviteten.");
+              })
+              .catch(() =>
+                toast.error("Kunne ikke forlade aktiviteten. Prøv igen senere.")
+              )
+              .finally(() => setShowModal(false))
+          }
+          onCancel={() => setShowModal(false)}
+        />
       )}
 
       <Navigation />
