@@ -9,6 +9,8 @@ Forår 2023
 
 Landrup Dans er en lille danseskole som er i gang med en større ekspansion. Firmaet vil gerne tilbyde deres kunder en digital oplevelse, som skal hjælpe med at få flere tilmeldinger til deres danseaktiviteter. I Landrup Dans web-app'en, er det muligt for brugere at finde og tilmelde sig til forskellige aktiviteter, der afvikles på skolen.
 
+Applikationen kan ses her: https://svendeprove-celinerh.vercel.app/
+
 ### Kom igang
 
 Dette projekt skal først have installeret sine dependencies med `npm install` og derefter startes appen med `npm start`.
@@ -46,9 +48,9 @@ Dette projekt skal først have installeret sine dependencies med `npm install` o
 |  9  | user5       |   1234   | 52  | default    |
 | 10  | user6       |   1234   | 51  | default    |
 
-### Udleveret API
+### API
 
-APIet kan klones fra GitHub her: https://github.com/rts-cmk/landrup-dans-api
+Jeg har lavet ændringer til assets url (har fjernet "http://localhost:4000" fra url), for at billedstien er korrekt, når jeg deployer api'et. Det opdaterede api kan klones her: https://github.com/celinerh/landrup-dans-api
 
 ---
 
@@ -117,11 +119,20 @@ I fremtiden kunne følgende features være fede at implementere i projektet:
 - Understøtte offline, så man kunne tilgå tilmeldte hold og f.eks. se møde tidspunkt selvom man er offline.
 - Login med Facebook, Google etc.
 - Implementere max deltagere på aktivitet
+- Lave en profil side, hvor man kan se og rette sit navn og alder
 - Søgefunktion, hvor man kan søge på instruktører og visuelt kunne se hvilken aktivitet instruktøren var knyttet til
 
 ---
 
-## Valgfri opgave C - Cookies
+## Valgfri opgave
+
+Jeg har valgt at lave to af de valgfrie opgaver:
+
+### Valgfri opgave A - Automatiseret deployment
+
+Applikationen kan ses her: https://svendeprove-celinerh.vercel.app/
+
+### Valgfri opgave C - Cookies
 
 Jeg har valgt at lave valgfri opgave C - Cookies. Jeg har på login siden (`/login`) lavet en checkbox "Husk mig", som sørger for at gemme token i en cookie, så brugeren bliver husket. Cookiens varighed bestemmes af tokens varighed, altså gemmes cookien i en time.
 
