@@ -21,7 +21,7 @@ function Welcome() {
           animationDelay: "1.5s",
         }}
       >
-        Kom i gang
+        Hej
       </Link>
     </div>
   );
